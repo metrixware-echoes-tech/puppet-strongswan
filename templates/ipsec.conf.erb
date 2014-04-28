@@ -1,0 +1,20 @@
+conn <%= @connection_name%>
+  authby=psk
+  auto=start
+  dpdaction=hold
+  esp=aes128-sha1!
+  forceencaps=yes
+  ike=aes128-sha1-modp2048!
+  keyexchange=ikev2
+  mobike=no
+  type=tunnel
+  left=%any
+  leftid=<%= @host_public_ip%>
+  leftsubnet=<%= @host_private_network%>
+  leftauth=psk
+  leftikeport=4500
+  right=<%= @remote_public_ip%>
+  rightsubnet=<%= @remote_private_network%>
+  rightauth=psk
+  rightikeport=4500
+

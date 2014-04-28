@@ -1,0 +1,8 @@
+name    'echoes-strongswan'
+version '0.1.0'
+source 'UNKNOWN'
+author 'echoes'
+license 'Apache License, Version 2.0'
+summary 'Installation and basic configuration of strongSwan'
+description 'Installs StrongSwan and configure one IPsec tunnel with a shared pass'
+project_page 'UNKNOWN'
