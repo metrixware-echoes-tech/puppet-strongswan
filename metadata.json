@@ -1,4 +1,18 @@
 {
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": "3.x"
+    }
+  ],
   "name": "echoes-strongswan",
   "version": "0.1.0",
   "source": "UNKNOWN",
