@@ -2,10 +2,10 @@
 
 1. [Overview](#overview)
 2. [Module Description - What the module does and why it is useful](#module-description)
-3. [Setup - The basics of getting started with [strongswan]](#setup)
-    * [What [strongswan] affects](#what-[strongswan]-affects)
+3. [Setup - The basics of getting started with strongswan](#setup)
+    * [What strongswan affects](#what-strongswan-affects)
     * [Setup requirements](#setup-requirements)
-    * [Beginning with [strongswan]](#beginning-with-[strongswan])
+    * [Beginning with strongswan](#beginning-with-strongswan)
 5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 5. [Limitations - OS compatibility, etc.](#limitations)
 6. [Development - Guide for contributing to the module](#development)
@@ -20,7 +20,7 @@ This module handles  StrongSwan installation, configuration and services on Debi
 
 ##Setup
 
-###What [strongswan] affects
+###What strongswan affects
 
   * strongswan configuration file :
     - /etc/ipsec.conf: IPsec configuration file.
@@ -28,7 +28,7 @@ This module handles  StrongSwan installation, configuration and services on Debi
   * strongswan service
   * strongswan package
 
-###Beginning with [strongswan]  
+###Beginning with strongswan  
 
 Each node just need this minimal declaration :
 
