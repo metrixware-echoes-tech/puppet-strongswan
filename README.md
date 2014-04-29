@@ -33,7 +33,7 @@ This module handles  StrongSwan installation, configuration and services on Debi
 Each node just need this minimal declaration :
 
 ```puppet
-    class { 'echoes_strongswan' :
+    class { 'strongswan' :
       remote_public_ip        => <public_IP_of_remote_VPN_server>,
       host_public_ip          => <public_IP_of_local_server>,
       remote_private_network  => <private_network_address_of_remote_VPN_server>,
