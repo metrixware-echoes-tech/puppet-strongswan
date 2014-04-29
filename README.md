@@ -83,4 +83,4 @@ Module supports only Debian systems.
 
 ##Development
 
-
+Issues can be reported on [github issues tracker](https://github.com/echoes-tech/puppet-strongswan/issues)
