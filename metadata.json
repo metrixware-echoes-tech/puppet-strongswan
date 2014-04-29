@@ -11,6 +11,10 @@
     {
       "name": "puppetlabs/stdlib",
       "version_requirement": ">= 0.1.6"
+    },
+    {
+      "name": "puppetlabs/firewall",
+      "version_requirement": ">= 0.5.0"
     }
   ],
   "types": [
@@ -18,8 +22,9 @@
   ],
   "checksums": {
     "LICENSE": "d8cc5723b16a10cf5bc133012f9a74ee",
-    "Modulefile": "e94309081e6a8d2b16a8e08f82e2701e",
-    "README.md": "5f48c22daa307ce3c6b401eb4e631b98",
+    "Modulefile": "ba1c768f907baa460c800c251625caa1",
+    "README.md": "026af4a816bbea8f29f43f7c5da7c404",
+    "README.md.bak": "5f48c22daa307ce3c6b401eb4e631b98",
     "manifests/init.pp": "f7fda06386602a471395fd6276a60e90",
     "manifests/params.pp": "33625f8b8f13cebd711257b8e509ce4c",
     "spec/spec_helper.rb": "a55d1e6483344f8ec6963fcb2c220372",
