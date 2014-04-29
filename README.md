@@ -8,15 +8,15 @@
     * [Beginning with strongswan](#beginning-with-strongswan)
 5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 5. [Limitations - OS compatibility, etc.](#limitations)
-6. [Development - Guide for contributing to the module](#development)
+6. [Development - How to contribute to the module](#development)
 
 ##Overview
 
-This module installs and configure a IPsec connection with pre-shared pass.
+This module installs and configures a IPsec connection with pre-shared pass.
 
 ##Module Description
 
-This module handles  StrongSwan installation, configuration and services on Debian Systems.
+This module handles StrongSwan installation, configuration and services on Debian Systems.
 
 ##Setup
 
@@ -30,7 +30,7 @@ This module handles  StrongSwan installation, configuration and services on Debi
 
 ###Beginning with strongswan  
 
-Each node just need this minimal declaration :
+Each node just needs this minimal declaration :
 
 ```puppet
     class { 'echoes_strongswan' :
@@ -79,7 +79,7 @@ Each node just need this minimal declaration :
 
 ##Limitations
 
-Module supports only Debian systems.
+This module only supports Debian systems.
 
 ##Development
 
