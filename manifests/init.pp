@@ -35,7 +35,7 @@
 #
 # === Example
 #
-#   class { 'echoes_strongswan' :
+#   class { 'strongswan' :
 #     remote_public_ip        => <public_IP_of_remote_VPN_server>,
 #     host_public_ip          => <public_IP_of_local_server>,
 #     remote_private_network  => <private_network_address_of_remote_VPN_server>,
@@ -48,9 +48,9 @@
 #
 # === Copyright
 #
-# Copyright 2014 Thibault Marquand
+# Copyright 2014 ECHOES Technologies <contact@echoes-tech.com> 
 #
-class echoes_strongswan 
+class strongswan 
 (
   $remote_public_ip         = $strongswan::params::remote_public_ip,
   $host_public_ip           = $strongswan::params::host_public_ip,
@@ -59,7 +59,7 @@ class echoes_strongswan
   $connection_name          = 'myconn',
   $package                  = $strongswan::params::package,
   $pass                     = 'pass',
-) inherits echoes_strongswan::params
+) inherits strongswan::params
 {
 package { $package :
   ensure    => 'present',
@@ -72,7 +72,7 @@ file { '/etc/ipsec.conf':
   owner     => 'root',
   group     => 'root',
   mode      => '0644',
-  content   =>  template('echoes_strongswan/ipsec.conf.erb'),
+  content   =>  template('strongswan/ipsec.conf.erb'),
   }
 
 file { '/etc/ipsec.secrets':
@@ -80,7 +80,7 @@ file { '/etc/ipsec.secrets':
   owner     => 'root',
   group     => 'root',
   mode      => '0640',
-  content   => template('echoes_strongswan/ipsec.secrets.erb'),
+  content   => template('strongswan/ipsec.secrets.erb'),
 }
   
 

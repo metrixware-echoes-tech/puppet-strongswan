@@ -1,8 +1,36 @@
-# Strongswan
+####Table of Contents
+
+1. [Overview](#overview)
+2. [Module Description - What the module does and why it is useful](#module-description)
+3. [Setup - The basics of getting started with [strongswan]](#setup)
+    * [What [strongswan] affects](#what-[strongswan]-affects)
+    * [Setup requirements](#setup-requirements)
+    * [Beginning with [strongswan]](#beginning-with-[strongswan])
+5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
+5. [Limitations - OS compatibility, etc.](#limitations)
+6. [Development - Guide for contributing to the module](#development)
+
+##Overview
 
 This module installs and configure a IPsec connection with pre-shared pass.
 
-## Getting start
+##Module Description
+
+This module handles  StrongSwan installation, configuration and services on Debian Systems.
+
+##Setup
+
+###What [strongswan] affects
+
+  * strongswan configuration file :
+    - /etc/ipsec.conf: IPsec configuration file.
+    - /etc/ipsec.secret: Pre-shared pass.
+  * strongswan service
+  * strongswan package
+
+###Beginning with [strongswan]  
+
+Each node just need this minimal declaration :
 
 ```puppet
     class { 'echoes_strongswan' :
@@ -14,20 +42,45 @@ This module installs and configure a IPsec connection with pre-shared pass.
     }
 ```
 
-License
--------
+##Reference
 
-Copyright (C) 2014 Echoes Technologies <contact@echoes-tech.fr>
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+####`remote_public_ip`
+  Public address of the remote vpn server
+  Default : undef
 
-    http://www.apache.org/licenses/LICENSE-2.0
+####`host_public_ip`
+  Public address of the local vpn server
+  Default : undef
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+####`remote_private_network`
+  Private network address of the remote vpn server
+  Netmask needed :
+  Example : 172.16.0.0/16
+  Default : undef
+
+####`host_private_network`
+  Private network address of the local vpn server
+  Netmask needed :
+  example : 192.168.56.0/24
+  Default : undef
+  
+####`connection_name`
+  Name of the connection
+  Default : myconn
+
+####`package`
+  Package name to install
+  Default : system dependent (only Debian is supported)
+
+####`pass`
+  Pre shared pass
+  Default : pass
+
+##Limitations
+
+Module supports only Debian systems.
+
+##Development
+
 
