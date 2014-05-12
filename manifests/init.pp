@@ -60,12 +60,15 @@ class strongswan
   $package                  = $strongswan::params::package,
   $pass                     = 'pass',
 ) inherits strongswan::params
+
 {
+include 'strongswan::firewall'
+
 package { $package :
   ensure    => 'present',
   name      => 'strongswan',
   before    => Service['strongswan'],
-}
+  }
 
 file { '/etc/ipsec.conf':
   ensure    => 'file',
@@ -81,50 +84,12 @@ file { '/etc/ipsec.secrets':
   group     => 'root',
   mode      => '0640',
   content   => template('strongswan/ipsec.secrets.erb'),
-}
-  
+  }
 
 service { 'strongswan':
   ensure    => 'running',
   name      => 'ipsec',
   enable    => true,
   subscribe => File['/etc/ipsec.conf'],
-}
-
-####################
-#  FIREWALL RULES  #
-####################
-
-firewall { '001 allow IKE':
-  ensure  => 'present',
-  action  => 'accept',
-  chain   => 'INPUT',
-  sport   => ['500'],
-  dport   => ['500'],
-  proto   => 'udp',
-  }->
-firewall { '002 allow mobIKE':
-  ensure  => 'present',
-  action  => 'accept',
-  chain   => 'INPUT',
-  sport   => ['4500'],
-  dport   => ['4500'],
-  iniface => 'eth0',
-  proto   => 'udp',
-  }->
-firewall { '003 ESP Traffic':
-  ensure  => 'present',
-  action  => 'accept',
-  chain   => 'INPUT',
-  proto   => 'esp',
-  iniface => 'eth0',
-  }->
-firewall { '004 allow ipsec policy':
-  ensure        => 'present',
-  action        => 'accept',
-  chain         => 'INPUT',
-  ipsec_dir     => 'in',
-  proto         => 'esp',
-  ipsec_policy  => 'ipsec',
   }
 }
